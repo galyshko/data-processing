@@ -1,0 +1,67 @@
+<div class="container">
+    <h2>Staff List</h2>
+    
+    <!-- Кнопка для показу форми створення нового співробітника -->
+    <button (click)="openCreateForm()">Create</button>
+  
+    <!-- Модальне вікно для створення або редагування співробітника -->
+    <div class="modal-backdrop" *ngIf="showCreateForm || showEditForm">
+      <div class="modal-content">
+          <span class="close" (click)="closeForm()">&times;</span>
+          <h3>{{ showEditForm ? 'Edit Staff' : 'Create New Staff' }}</h3>
+          <form (ngSubmit)="showEditForm ? updateStaff() : createStaff()">
+              <label for="firstName">First Name:</label>
+              <input type="text" id="firstName" [(ngModel)]="newStaff.firstName" name="firstName" required>
+              
+              <label for="lastName">Last Name:</label>
+              <input type="text" id="lastName" [(ngModel)]="newStaff.lastName" name="lastName" required>
+              
+              <label for="age">Age:</label>
+              <input type="number" id="age" [(ngModel)]="newStaff.age" name="age" required>
+              
+              <label for="position">Position:</label>
+              <input type="text" id="position" [(ngModel)]="newStaff.position" name="position" required>
+              
+              <label for="salary">Salary:</label>
+              <input type="number" id="salary" [(ngModel)]="newStaff.salary" name="salary" required>
+              
+              <label for="imageUrl">Image URL:</label>
+              <input type="text" id="imageUrl" [(ngModel)]="newStaff.imageUrl" name="imageUrl" required>
+              
+              <label for="phoneNumber">Phone Number:</label>
+              <input type="text" id="phoneNumber" [(ngModel)]="newStaff.phoneNumber" name="phoneNumber" required>
+              
+              <label for="email">Email:</label>
+              <input type="email" id="email" [(ngModel)]="newStaff.email" name="email" required>
+              
+              <label for="hireDate">Hire Date:</label>
+              <input type="date" id="hireDate" [(ngModel)]="newStaff.hireDate" name="hireDate" required>
+              
+              <button type="submit">{{ showEditForm ? 'Update' : 'Create' }}</button>
+              <button type="button" (click)="cancelCreateForm()">Cancel</button>
+          </form>
+      </div>
+  </div>
+  
+    <!-- Список співробітників у двох стовпцях -->
+    <div class="staff-list">
+      <div class="staff-item" *ngFor="let staff of staffs">
+        <div class="staff-image">
+          <img [src]="staff.imageUrl" alt="{{staff.firstName}} {{staff.lastName}}">
+        </div>
+        <div class="staff-info">
+          <p><strong>ID:</strong> {{staff.id}}</p>
+          <p><strong>Name:</strong> {{staff.firstName}} {{staff.lastName}}</p>
+          <p><strong>Age:</strong> {{staff.age}}</p>
+          <p><strong>Position:</strong> {{staff.position}}</p>
+          <p><strong>Salary:</strong> ${{staff.salary}}</p>
+          <p><strong>Phone:</strong> {{staff.phoneNumber}}</p>
+          <p><strong>Email:</strong> {{staff.email}}</p>
+          <p><strong>Hire Date:</strong> {{staff.hireDate}}</p>
+          <button (click)="editStaff(staff)">Edit</button>
+          <button (click)="deleteStaff(staff.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

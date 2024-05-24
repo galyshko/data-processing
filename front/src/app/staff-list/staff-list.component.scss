@@ -1,0 +1,202 @@
+/* Стилі для модального вікна */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнений фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Підняти над іншими елементами */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Підкреслення кнопки при наведенні */
+.close:hover {
+    text-decoration: underline;
+}
+
+/* Додаткові стилі для решти контенту за потреби */
+.container {
+    margin: 20px;
+}
+
+.staff-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Додаткові стилі для елементів списку співробітників */
+.staff-item {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 48%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.staff-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.staff-info {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.staff-info p {
+    margin: 5px 0;
+}
+
+.staff-info button {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.staff-info button:hover {
+    background-color: #45a049;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button.edit {
+    background-color: #FFC107;
+}
+
+button.edit:hover {
+    background-color: #e0a800;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    margin-top: 10px;
+    background-color: #007BFF;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/* Стилі для модального вікна */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнений фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Підняти над іншими елементами */
+}
+
+.modal-content {
+    background-color: #ffffff; /* Змінити колір фону */
+    padding: 30px; /* Збільшити відступи */
+    border-radius: 10px; /* Збільшити радіус кутів */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Покращити тінь */
+    width: 400px; /* Задати фіксовану ширину вікна */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #555555; /* Змінити колір іконки */
+}
+
+/* Підкреслення кнопки при наведенні */
+.close:hover {
+    text-decoration: underline;
+    color: #333333; /* Змінити колір іконки при наведенні */
+}
+
+form label {
+    display: block;
+    margin-top: 15px; /* Збільшити відступ між полями вводу */
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="date"] {
+    width: calc(100% - 16px); /* Правильно відрахувати ширину поля вводу */
+    padding: 10px; /* Збільшити відступи всередині поля вводу */
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Змінити колір рамки */
+    border-radius: 4px;
+}
+
+/* Змінити стилі кнопок "Create" та "Cancel" */
+form button[type="submit"],
+form button[type="button"] {
+    margin-top: 20px;
+    padding: 12px 20px; /* Збільшити відступи кнопок */
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF; /* Змінити колір фону кнопок */
+    color: #ffffff; /* Змінити колір тексту кнопок */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover,
+form button[type="button"]:hover {
+    background-color: #0056b3; /* Змінити колір фону кнопок при наведенні */
+}
+
+/* Затемнення кнопок при наведенні */
+form button[type="submit"]:active,
+form button[type="button"]:active {
+    filter: brightness(90%);
+}
